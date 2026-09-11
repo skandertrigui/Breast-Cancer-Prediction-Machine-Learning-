@@ -26,7 +26,6 @@ The dataset used in this project contains biomedical information related to brea
 * Number of explanatory variables: **9**
 * Target variable: **Classification**
 * Classes:
-
   * `0`: Healthy
   * `1`: Breast cancer
 
@@ -61,14 +60,14 @@ The project follows a complete supervised Machine Learning pipeline:
 
 Six supervised classification models were trained and compared:
 
-| Model               | Purpose                               |
-| ------------------- | ------------------------------------- |
-| Logistic Regression | Interpretable baseline model          |
-| Naive Bayes         | Probabilistic classification          |
-| Ridge Classifier    | Handling collinearity                 |
-| Lasso               | Feature selection                     |
-| K-Nearest Neighbors | Local similarity-based classification |
-| MLP Classifier      | Neural network approach               |
+| Model                | Purpose                               |
+| -------------------- | ------------------------------------- |
+| Logistic Regression  | Interpretable baseline model          |
+| Naive Bayes          | Probabilistic classification          |
+| Ridge Classifier     | Handling collinearity                 |
+| Lasso                | Feature selection                     |
+| K-Nearest Neighbors  | Local similarity-based classification |
+| MLP Classifier       | Neural network approach               |
 
 A DummyClassifier was also used as a naive baseline to verify that the trained models perform better than a simple majority-class strategy.
 
@@ -116,133 +115,34 @@ Main features:
 
 ### Streamlit Prediction Interface
 
-![Streamlit App](images/streamlit_app.png)
+![Streamlit App](streamlit_app.png)
 
 ### Prediction Result
 
-![Prediction Result](images/prediction_result.png)
+![Prediction Result](prediction_result.png)
 
 ### Model Comparison
 
-![Model Comparison](images/model_comparison.png)
+![Model Comparison](model_comparison.png)
 
 ### Confusion Matrix or ROC Curve
 
-![Model Evaluation](images/model_evaluation.png)
+![Model Evaluation](model_evaluation.png)
 
 ## Project Structure
 
 ```text
-breast-cancer-ml-prediction/
-│
+.
 ├── README.md
+├── app.py
+├── breast_cancer_modeling.ipynb.ipynb
+├── breast_cancer_presentation.pdf
+├── breast_cancer_report.pdf
+├── dataR2.csv
+├── model.pkl
+├── scaler.pkl
 ├── requirements.txt
-├── .gitignore
-│
-├── app/
-│   └── app.py
-│
-├── data/
-│   └── dataR2.csv
-│
-├── models/
-│   ├── model.pkl
-│   └── scaler.pkl
-│
-├── notebooks/
-│   └── breast_cancer_modeling.ipynb
-│
-├── reports/
-│   ├── breast_cancer_report.pdf
-│   └── breast_cancer_presentation.pdf
-│
-└── images/
-    ├── streamlit_app.png
-    ├── prediction_result.png
-    ├── model_comparison.png
-    └── model_evaluation.png
-```
-
-## How to Run the Project
-
-### 1. Clone the repository
-
-```bash
-git clone https://github.com/arefbakali/breast-cancer-ml-prediction.git
-cd breast-cancer-ml-prediction
-```
-
-### 2. Create a virtual environment
-
-```bash
-python -m venv .venv
-```
-
-### 3. Activate the environment
-
-On Windows:
-
-```bash
-.venv\Scripts\activate
-```
-
-On macOS/Linux:
-
-```bash
-source .venv/bin/activate
-```
-
-### 4. Install dependencies
-
-```bash
-pip install -r requirements.txt
-```
-
-### 5. Run the Streamlit application
-
-```bash
-streamlit run app/app.py
-```
-
-## Requirements
-
-Main libraries used:
-
-* Python
-* Pandas
-* NumPy
-* Scikit-learn
-* Matplotlib
-* Seaborn
-* Streamlit
-* OpenPyXL
-
-## Key Takeaways
-
-* Machine Learning can provide useful support for binary classification in a medical context.
-* KNN achieved the best compromise on the test set.
-* Medical evaluation requires more than accuracy; recall, specificity, F1-score, false negatives, and false positives are essential.
-* The small dataset size remains a limitation, so the results should be interpreted carefully.
-
-## Limitations
-
-* The dataset contains only 116 observations.
-* The model is intended for academic and educational purposes only.
-* The application should not be used as a real medical diagnostic tool.
-* Additional clinical validation would be required before any real-world use.
-
-## Future Improvements
-
-* Test the approach on a larger medical dataset
-* Add model explainability with SHAP or LIME
-* Improve the Streamlit interface
-* Deploy the application online
-* Add automated model retraining
-* Add a probability score instead of only a class prediction
-
-## Author
-
-**Aref Bak Ali**<br>
-AI, Data Science & Agentic AI Student<br>
-GitHub: https://github.com/arefbakali<br>
-LinkedIn: https://linkedin.com/in/aref-bak-ali/
+├── model_comparison.png
+├── model_evaluation.png
+├── prediction_result.png
+└── streamlit_app.png
